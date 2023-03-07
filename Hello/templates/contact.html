@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact{% endblock title %}
+
+{% block body %}
+<div class="container my-4" style="border-radius: 20px; box-shadow: 0px 0px 61px 3px #f08f8f;">
+    <img src="/static/assets/patreon-big.png" class="d-block w-100 mx-0" alt="...">
+</div>
+<div class="container mb-3 py-4">
+    <h1 class="text-center">Want Early Build access ?</h1>
+  <div class="container my-4" style="border-radius: 20px; box-shadow: 0px 0px 61px 3px #f08f8f;">
+    <form method="post" action="/contact">
+    {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email">
+        </div>
+        
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="phone" class="form-control" id="phone" name="phone" placeholder="Enter Your Phone Number">
+        </div>      
+        
+        <div class="form-group">
+            <label for="desc">Tell me , If you want early access...</label>
+            <textarea class="form-control" id="desc" rows="3" name="desc"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+
+</div>
+
+{% endblock body %}
